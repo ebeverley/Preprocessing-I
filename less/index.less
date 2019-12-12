@@ -33,8 +33,11 @@ body {
 	line-height: 1;
 	font-size:62.5%;
 	width:50%;
+	height:600vh;
 	margin: 0 auto;
- 	box-shadow:         3px 3px 5px 6px #ccc;
+	@media(max-width: 500px){
+		width:100%;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -61,53 +64,163 @@ html, body {
     height: 100%;
 }
 //Start of my code//
-.beginning(){
+@import url('https://fonts.googleapis.com/css?family=Alatsi|Work+Sans&display=swap');
+
+@main-color:rgba(36, 51, 73, 0.911);
+
+@second-color:rgb(244, 245, 247);
+
+@main-font:'Alatsi', sans-serif;
+
+@secondary-font:'Work Sans', sans-serif;
+
+.setup(){
 	font-size:1.5rem;
 	padding:2%;
-	border: 2px dotted black;
 	text-align:center;
 }
 header{
 	color:white;
-	background-color:rgba(7, 31, 68, 0.911);
-	.beginning();
+	background-color:@main-color;
+	.setup();
+	@media (max-width 500px){
+		header{
+		width:100%
+		height:28vh;
+		}
+	}
 	nav{
-		width:50%;
+		width:100%;
 		text-align:center;
 		display:flex;
 		justify-content:space-evenly;
 		font-size:1rem;
-		margin-left:45%;
 		padding-bottom:3%;
+		font-size:1.5rem;
+		@media(max-width 500px){
+			font-size:1rem;
+			width:100%;
+			display:flex;
+			flex-direction:column;
+		}
 	}
 	h1{
 		font-size:3.5rem;
 		padding-bottom:6%;
+		@media(max-width:500px){
+			font-size:1.5rem;
+		}
 	}
-	.header-img{
-		width:30%;
+	.header-img{	
+		width:34%;
+		@media(max-width:500px){
+			height:20vh;
+			width:37%;
+			border-radius:5px;
+		}
 	}
 	.header-div{
-		color:darkslategray;
+		color:darkslategrey;
 		background-color:white;
-		border-radius:2%;
+		border-radius:5%;
 		width:90%;
 		padding:5%;
 		display:flex;
 		justify-content:space-evenly;
 		margin:0 auto;
-	}
+		text-align:left;
+		@media(max-width:500px){
+			height:27vh;
+			display:flex;
+			flex-direction:row;
+			padding-bottom:20%;
+			margin-bottom:3%;
+		}
+		}
 	p{
-		width:40%;
+		width:50%;
+		font-family:@secondary-font;
+		@media(max-width: 500px){
+			font-size:1rem;
+		}
 	}
 }//End Header Elemtents//
-.skills-container{
+.big-container{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	border:1px solid grey;
+	h2{
+		font-family:@main-font;
+		font-size:2.5rem;
+		width:50%;
+		display:flex;
+		justify-content:center;
+		@media(max-width: 500px){
+			font-size:1.5rem;
+		}
+	}
+	.skills-container{
+		width:100%;
+		display:flex;
+		flex-wrap:nowrap;
+		border-bottom:2px solid lightgray;
+		h2{
+			display:flex;
+		    justify-content:space-evenly;
+			align-items:center;
+		}
+		ul{
+			list-style-type:initial;
+			@media(max-width: 500px){
+				font-size:1.0rem;
+			}
+		}
+		li{
+			padding:3%;
+			text-align:left;
 
-	.beginning();
-}
-.work-container{
-	.beginning();
-}
-footer{
-	.beginning();
+		}
+		
+	.setup();
+	}
+	.work-container{
+		width:100%;
+		display:flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+
+		h2{
+			width:50%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		ul{
+			@media(max-width: 500px){
+				font-size:1.0rem;
+				width:50%;
+			}
+			width:40%;
+			background-color:rgba(215, 220, 228, 0.781)
+		}
+		li{
+			padding:4%;
+			border: 1px solid rgb(117, 112, 112);
+		}
+	.setup();
+	}
+	footer{
+		width:100%;
+		color:@second-color;
+		background-color:@main-color;
+		display:flex;
+
+
+		.setup();
+		address{
+			font-family:@secondary-font;
+			font-size:1rem;
+		}
+	}
 }
